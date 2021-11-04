@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Know your Golf Equipment</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta
+      name="description"
+      content="A guide for any type of golfer looking to buy new golf equipment, but dont know where to start!"
+    />
+    <meta
+      name="keywords"
+      content="buying golf equipment, golf clubs, buying golf clubs, beginner golfer, what golf club to buy, golf"
+    />
+    <style>
+      h1, h2, ul, li {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background-color: rgb(227, 238, 253);
+        font-family: Arial, Helvetica, sans-serif;
+        
+      }
+      .topnav {
+        background-color: rgb(5, 84, 204);
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        list-style-type: none;
+        overflow: hidden;
+        display: block;
+      }
+      .topnav a {
+        color: white;
+        text-align: center;
+        padding: 14px 45px;
+        font-size: 16px;
+        float: left;
+        text-decoration: none;
+        display: block;
+      }
+      .nav:hover {
+        font-weight: bold;
+      }
+      a:hover {
+        font-weight: bold;
+      }
+      #header {
+        text-align: left;
+      }
+      fieldset {
+        text-align: left;
+        border: 1px solid lightgray;
+        width: 30%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        background-color: white;
+      }
+      .input {
+        width: 100%;
+        margin: 10px 5px;
+        
+      }
+
+    </style>
+    <body>
+      <h1>Golfers Heaven</h1>
+      <nav>
+        <div class="topnav">
+          <a href="index.html" class="heading">Home</a>
+          <a href="driver.html" class="heading">Drivers</a>
+          <a href="woods.html" class="heading">Fairway Woods</a>
+          <a href="irons.html" class="heading">Irons</a>
+          <a href="wedges.html" class="heading">Wedges</a>
+          <a href="putter.html" class="heading">Putters</a>
+          <a href="golfbag.html" class="heading">Golf Bags</a>
+          <a href="contact.html" class="heading">Contact</a>
+          <a href="sitemap.html" class="heading">Sitemap</a>
+        </div>
+      </nav>
+    </div>
+    <h2>Contact Information</h2>
+    <ul>
+        Phone Number: (123)-456-7890
+        <br>
+        Email Address: cchua2@babson.edu
+    </ul>
+    <h2>Feedback Form</h2>
+    <form>
+      <fieldset>
+        <div class="input">
+          <label>First name:</label>
+          <input id="firstname" placeholder="First name here">
+        </div>
+        <div class="input" >
+          <label>Last name:</label>
+          <input id="lastname" placeholder="Last name here">
+        </div>
+        <div class="input" >
+          <label>Email:</label>
+          <input id="email" placeholder="Email here">
+        </div>
+        <div class="input">
+          Gender:
+          <br>
+          <label>Male<input type="radio" name="gender" value="male"></label>
+          <label>Female<input type="radio" name="gender" value="female"></label>
+        </div>
+        <div class="input">
+          <label for="type">What level of golfer are you?</label> <br>
+          <select name="" id="type">
+              <option value="noob">
+                Just started
+              </option>
+              <option value="beginner">
+                Beginner
+              </option>
+              <option value="Intermediate">
+                Intermediate
+              </option>
+              <option value="amaetuer">
+                Amaetuer
+              </option>
+              <option value="competitor">
+                Competitor
+            </option>
+          </select>
+        </div>
+        <div class="input">
+          Which golf brands have you heard of before? (Check all that apply):
+          <br>
+          <input type="checkbox" id="brand1" name="brand1" value="taylormade">
+          <label for="brand1"> Taylormade</label><br>
+          <input type="checkbox" id="brand2" name="brand2" value="callaway">
+          <label for="brand2"> Callaway</label><br>
+          <input type="checkbox" id="brand3" name="brand3" value="titleist">
+          <label for="brand3"> Titleist / Vokey / Scotty Cameron</label><br>
+          <input type="checkbox" id="brand4" name="brand4" value="cobra">
+          <label for="brand4"> Cobra</label><br>
+          <input type="checkbox" id="brand5" name="brand5" value="ping">
+          <label for="brand5"> Ping</label><br>
+          <input type="checkbox" id="brand6" name="brand6" value="Mizuno">
+          <label for="brand6"> Mizuno</label><br>
+          <input type="checkbox" id="brand7" name="brand7" value="pxg">
+          <label for="brand7"> PXG</label><br>
+          <input type="checkbox" id="brand8" name="brand8" value="srixon">
+          <label for="brand8"> Srixon</label><br>
+        </div>
+        <div class="input">
+          <label for="feedback">Feedback(optional):</label>
+          <br>
+          <textarea name="feedback" id="comment" cols="60" rows="5" placeholder="Please comment here..."></textarea>
+      </div>
+      <div class="input">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+
+      </fieldset>
+    </form>
+</body>
+</head>
+</html>
