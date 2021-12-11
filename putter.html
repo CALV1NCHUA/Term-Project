@@ -53,6 +53,11 @@
       #header {
         text-align: left;
       }
+      tr,
+      td,
+      th {
+        border: 2px solid black;
+      }
     </style>
     <body>
       <h1>Golfers Heaven</h1>
@@ -72,124 +77,38 @@
 
       <div>
         <h1>Putters</h1>
-        <table style="width: 100%">
-          <tr id="header">
-            <th>Club</th>
-            <th>Price</th>
-            <th>Why it made the list</th>
-            <th>Golf club product page</th>
-          </tr>
-          <tr>
-            <td class="Pic">
-              <img
-                id=""
-                src="images/"
-                alt=""
-                title=" "
-                width="300"
-              />
-              <li>
-                <strong></strong>
-              </li>
-            </td>
-            <td class="price">
-              <a
-                href=""
-                target="_blank"
-                >$
-              </a>
-            </td>
-            <td class="skill">
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </td>
-            <td class="product">
-              <button>
-                <a
-                  href=""
-                  target="_blank"
-                  >Click Here</a
-                >
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="Pic">
-              <img
-                id=""
-                src="images/"
-                alt=""
-                title=""
-                width="300"
-              />
-              <li>
-                <strong> </strong>
-              </li>
-            </td>
-            <td class="price">
-              <a
-                href=""
-                target="_blank"
-                >$
-              </a>
-            </td>
-            <td class="skill">
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </td>
-            <td class="product">
-              <button>
-                <a
-                  href=""
-                  target="_blank"
-                  >Click Here</a>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="Pic">
-              <img
-                id=""
-                src="images/"
-                alt=""
-                title=""
-                width="300"
-              />
-              <li>
-                <strong></strong>
-              </li>
-            </td>
-            <td class="price">
-              <a
-                href=""
-                target="_blank"
-                >$
-              </a>
-            </td>
-            <td class="skill">
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </td>
-            <td class="product">
-              <button>
-                <a
-                  href=""
-                  target="_blank"
-                  >Click Here</a>
-              </button>
-            </td>
-          </tr>
-        </table>
+        <div class="row">
+          <div class="column">
+            <a href="https://www.scottycameron.com/putters/">
+            <img id="scottycameron" src="images/scottcam.png" alt="scottycameron" style="width: 100%"/>
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://blog.odysseygolf.com/toulondesign/#models">
+            <img id="odyssey" src="images/odyssey.png" alt="odyssey" style="width: 100%"/>
+            </a>
+          </div>
+        </div>
       </div>
     </body>
+    <script>
+       function onodyssey() {
+        console.log("mouse on...");
+        const x = document.getElementById("odyssey");
+        x.src = "images/hosels2-2.jpg";
+      }
+      function offodyssey() {
+        console.log("mouse off...");
+        const y = document.getElementById("odyssey");
+        y.src = "images/odyssey.png";
+      }
+
+      document.getElementById("odyssey").onmouseover = function () {
+        onodyssey();
+      };
+      document.getElementById("odyssey").onmouseout = function () {
+        offodyssey();
+      };
+    </script>
   </head>
 </html>

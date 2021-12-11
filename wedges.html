@@ -53,6 +53,11 @@
       #header {
         text-align: left;
       }
+      tr,
+      td,
+      th {
+        border: 2px solid black;
+      }
     </style>
     <body>
       <h1>Golfers Heaven</h1>
@@ -80,36 +85,36 @@
             <th>Golf club product page</th>
           </tr>
           <tr>
-            <td class="Pic">
+            <td class="SM8-pic">
               <img
-                id=""
-                src="images/"
-                alt=""
-                title=" "
+                id="sm8"
+                src="images/sm8.jpeg"
+                alt="sm8"
+                title="vokey sm8"
                 width="300"
               />
               <li>
-                <strong></strong>
+                <strong>Titleist Vokey SM8 Wedges</strong>
               </li>
             </td>
             <td class="price">
               <a
-                href=""
+                href="https://www.pgatoursuperstore.com/vokey-sm8-tour-chrome-wedge/2000000010636.html?cgid=titleist-sm8#start=1"
                 target="_blank"
-                >$
+                >$159.99
               </a>
             </td>
             <td class="skill">
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Titliest Vokey wedges are the best of the best wedges you can get on the market. Master craftsmen, Bob Vokey creates the next evolution of world renown Vokey wedges</li>
+                <li>Vokey proprietary technology, the Spinned Milled proccess, maximizes spin and durability of the golf club to new heights</li>
+                <li>MICRO GROOVES. Grooves within grooves. </li>
               </ul>
             </td>
             <td class="product">
               <button>
                 <a
-                  href=""
+                  href="https://www.vokey.com/wedges/sm8.aspx"
                   target="_blank"
                   >Click Here</a
                 >
@@ -119,34 +124,34 @@
           <tr>
             <td class="Pic">
               <img
-                id=""
-                src="images/"
-                alt=""
-                title=""
+                id="tmwedge"
+                src="images/TMHightoe.jpg"
+                alt="tmwedge"
+                title="tmwedge"
                 width="300"
               />
               <li>
-                <strong> </strong>
+                <strong> Taylormade MG Hi-Toe Raw Wedge </strong>
               </li>
             </td>
             <td class="price">
               <a
-                href=""
+                href="https://www.pgatoursuperstore.com/mg-hi-toe-raw-wedge/2000000017714.html?cgid=golf-clubs-wedges#prefn1=brand&prefv1=PING%7CTaylorMade&start=1"
                 target="_blank"
-                >$
+                >$179.99
               </a>
             </td>
             <td class="skill">
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>As part of the Milled Grind (MG) family of wedges, the Hi-Toe has been a staple with its full face groove design</li>
+                <li>The RAW face technology is designed for increased spin and feel. what causes it is the how the face RUSTS over time, which perserves the spin and improves the look of the club</li>
+                <li>The full face groove design is combined with a larger overall club face compared to regular wedges; allowing for more versatility around the greens</li>
               </ul>
             </td>
             <td class="product">
               <button>
                 <a
-                  href=""
+                  href="https://www.taylormadegolf.com/Hi-Toe-RAW-Wedge/DW-WZ753.html?utm_source=bing&utm_medium=paid_search&utm_campaign=weg+weg+mght+pds+ggl+conv+gen+txt&msclkid=a2f312d86be816683d81736c64795c08"
                   target="_blank"
                   >Click Here</a>
               </button>
@@ -155,34 +160,33 @@
           <tr>
             <td class="Pic">
               <img
-                id=""
-                src="images/"
-                alt=""
-                title=""
+                id="cbx"
+                src="images/cbx.png"
+                alt="cbx"
+                title="cbx wedge"
                 width="300"
               />
               <li>
-                <strong></strong>
+                <strong>Cleveland CBX Full Face Wedge</strong>
               </li>
             </td>
             <td class="price">
               <a
-                href=""
+                href="https://www.pgatoursuperstore.com/cbx-full-face-wedge-w%2F-steel-shaft/2000000010171.html?cgid=golf-clubs-wedges#sz=108&start=1"
                 target="_blank"
-                >$
+                >$149.99
               </a>
             </td>
             <td class="skill">
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Cleveland has a long standing reputation in the golf industry for creating premium quality golf clubs with competitive pricing dedicated to improving and MID handicapped players</li>
+                <li>CBX Full face adopts the similar Full face groove technology as other manufacturers, the difference is that this wedge is a cavity back wedge. Offering MAXIMUM forgivness compared to any other traditional wedge in the market</li>
               </ul>
             </td>
             <td class="product">
               <button>
                 <a
-                  href=""
+                  href="https://www.clevelandgolf.com/us/cbx-full-face.html"
                   target="_blank"
                   >Click Here</a>
               </button>
@@ -191,5 +195,69 @@
         </table>
       </div>
     </body>
+    <script>
+
+      const slides = [
+        "images/sm8.jpeg",
+        "images/sm8black.jpeg",
+        "images/sm8brushsteel.jpeg",
+        "images/sm8bluesteel.png",
+      ];
+
+      let i = 0;
+
+
+      function slideShow() {
+        console.log("...started");
+        let sm8Image = document.getElementById("sm8");
+        if (i === slides.length) {
+          i = 0;
+        }
+        sm8Image.src = slides[i];
+        i++;
+        setTimeout(slideShow, 1000);
+      }
+
+      document.querySelector("body").onload = slideShow;
+
+
+      function ontmwedge() {
+        console.log("mouse on...");
+        const x = document.getElementById("tmwedge");
+        x.src = "images/hightoe2.jpg";
+      }
+      function offtmwedge() {
+        console.log("mouse off...");
+        const y = document.getElementById("tmwedge");
+        y.src = "images/TMHightoe.jpg";
+      }
+
+      function oncbx() {
+        console.log("mouse on...");
+        const x = document.getElementById("cbx");
+        x.src = "images/cbx(2).png";
+      }
+      function offcbx() {
+        console.log("mouse off...");
+        const y = document.getElementById("cbx");
+        y.src = "images/cbx.png";
+      }
+
+      document.getElementById("tmwedge").onmouseover = function () {
+        ontmwedge();
+      };
+      document.getElementById("tmwedge").onmouseout = function () {
+        offtmwedge();
+      };
+
+      document.getElementById("cbx").onmouseover = function () {
+        oncbx();
+      };
+      document.getElementById("cbx").onmouseout = function () {
+        offcbx();
+      };
+
+
+    </script>
   </head>
 </html>
