@@ -18,7 +18,7 @@
       content="buying golf equipment, golf clubs, buying golf clubs, beginner golfer, what golf club to buy, golf"
     />
     <style>
-      h1, h2, ul, li {
+      h1, h2, li {
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
       }
@@ -60,13 +60,35 @@
         width: 30%;
         margin: 0 auto;
         margin-bottom: 20px;
-        background-color: white;
+        background-color: white; 
       }
       .input {
         width: 100%;
         margin: 10px 5px;
-        
+        padding: 6px;
+        margin-bottom: 4px ;
       }
+      
+      input.invalid{
+        border: 1px solid red;
+      }
+      .error-hint {
+        color: red;
+        font-size: 12px;
+      }
+      .hidden {
+        display: none;
+      }
+      #CI {
+        text-align: center;
+      }
+      .thankyou {
+        padding: 40px;
+        font-size: 32px;
+        text-align: center;
+      }
+
+
 
     </style>
     <body>
@@ -86,37 +108,48 @@
       </nav>
     </div>
     <h2>Contact Information</h2>
-    <ul>
+    <div id="CI">
         Phone Number: (123)-456-7890
         <br>
         Email Address: cchua2@babson.edu
-    </ul>
+      </div>
     <h2>Feedback Form</h2>
-    <form>
-      <fieldset>
+    <form name="FeedbackForm" id="fbform"  >
+      <div class="form-group">
+        <fieldset>
         <div class="input">
-          <label>First name:</label>
-          <input id="firstname" placeholder="First name here">
+          <label>First name:</label> <br>
+          <input class="" name="firstname" id="firstname" placeholder="First name here">
+          <div class="error-hint hidden">First name reqiured</div>
         </div>
+
         <div class="input" >
-          <label>Last name:</label>
-          <input id="lastname" placeholder="Last name here">
+          <label>Last name:</label> <br>
+          <input class="" name="lastname" id="lastname" placeholder="Last name here">
+          <div id="hidden" class="error-hint hidden">Last name reqiured</div>
         </div>
+
         <div class="input" >
-          <label>Email:</label>
-          <input id="email" placeholder="Email here">
+          <label>Email:</label> <br>
+          <input class="" name="email" id="email" placeholder="your_email@example.com">
+          <div class="error-hint hidden"> Email is invalid</div>
         </div>
+
         <div class="input">
           Gender:
           <br>
-          <label>Male<input type="radio" name="gender" value="male"></label>
+          <label>Male<input type="radio" name="gender" value="male" ></label>
           <label>Female<input type="radio" name="gender" value="female"></label>
+          <label>Other<input type="radio" name="gender" value="other"></label>
+          <div class="error-hint hidden">Please pick gender</div>
         </div>
+
+      
         <div class="input">
           <label for="type">What level of golfer are you?</label> <br>
-          <select name="" id="type">
-              <option value="noob">
-                Just started
+          <select name="golflevel" id="type">
+              <option value="DontPlay">
+                Dont Play
               </option>
               <option value="beginner">
                 Beginner
@@ -132,6 +165,8 @@
             </option>
           </select>
         </div>
+
+      
         <div class="input">
           Which golf brands have you heard of before? (Check all that apply):
           <br>
@@ -161,9 +196,74 @@
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
       </div>
-
-      </fieldset>
+        </fieldset>
+     </div>
     </form>
+    <div class="thankyou hidden">
+      Thank you for you Feedback!
+    </div>
 </body>
+<script>
+  const form = document.querySelector("form[name='FeedbackForm']");
+  const thankyou = document.querySelector(".thankyou");
+  const firstnameInput = document.querySelector("input[name='firstname']");
+  const lastnameInput = document.querySelector("input[name='lastname']");
+  const emailInput = document.querySelector("input[name='email']"); 
+  const inputs = [firstnameInput, lastnameInput, emailInput]
+
+  let isFormValid = false;
+  let isValidationOn = false;
+
+  const resetElm = (elm) => {
+    elm.classList.remove("invalid");
+    elm.nextElementSibling.classList.add("hidden");
+  };
+
+  const invalidateElm = (elm) => {
+    elm.classList.add("invalid");
+    elm.nextElementSibling.classList.remove("hidden");
+  };
+
+  const validateInputs = () => {
+    isFormValid = true;
+
+    if (!isValidationOn) return;
+    
+    resetElm(firstnameInput);
+    resetElm(lastnameInput);
+    resetElm(emailInput);
+
+    if (!firstnameInput.value) {
+      isFormValid = false;
+     invalidateElm(firstnameInput);
+    }
+    if (!lastnameInput.value) {
+      isFormValid = false;
+     invalidateElm(lastnameInput);
+    }
+    if (!emailInput.value) {
+      isFormValid = false;
+     invalidateElm(emailInput);
+    }
+  }; 
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    isValidationOn = true;
+    validateInputs();
+    if (isFormValid) {
+      form.remove();
+      thankyou.classList.remove("hidden")
+    }
+  }); 
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+    validateInputs();
+  });
+  })
+  
+
+</script>
 </head>
 </html>

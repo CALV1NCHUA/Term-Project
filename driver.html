@@ -22,6 +22,9 @@
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
       }
+      h2 {
+        text-align: center;
+      }
       body {
         background-color: rgb(227, 238, 253);
         font-family: Arial, Helvetica, sans-serif;
@@ -51,7 +54,16 @@
         font-weight: bold;
       }
       #header {
-        text-align: left;
+        text-align: center;
+        border: 2px solid black;
+      }
+      /* table {
+        border: 2px solid black; */
+
+      tr,
+      td,
+      th {
+        border: 2px solid black;
       }
     </style>
     <body>
@@ -71,8 +83,8 @@
       </nav>
 
       <div>
-        <h1>Drivers</h1>
-        <table style="width: 100%">
+        <h2>Drivers</h2>
+        <table id="driver" style="width: 100%">
           <tr id="header">
             <th>Club</th>
             <th>Price</th>
@@ -84,7 +96,7 @@
               <img
                 id="simmax"
                 src="images/simmaxdriver.jpg"
-                alt="sim-max"
+                alt="sim"
                 title="sim max"
                 width="300"
               />
@@ -124,12 +136,12 @@
               <img
                 id="epicmax"
                 src="images/Epic-Max-driver.jpg"
-                alt="epic-max"
+                alt="epic"
                 title="epic max"
                 width="300"
               />
               <li>
-                <strong>2021 Callaway Epic Speed Triple Diamond </strong>
+                <strong>2021 Callaway Epic Max </strong>
               </li>
             </td>
             <td class="price">
@@ -141,9 +153,20 @@
             </td>
             <td class="skill">
               <ul>
-                <li>One of the best drivers released for this season, utilizes the  A.I.-designed Flash Face and Jailbreak technology from one of Callaway's best driver, MAVRIK, and added some more</li>
-                <li>Suitable for golfers with a MID to LOW handicap. Seasoned players with higher swing speeds and with good consistency.</li>
-                <li>TRIPLE DIAMOND SPEED is the TOUR prefered driver, used by Callaway professionals. It offers more of a penetrating and lower spinning ball flight</li>
+                <li>
+                  One of the best drivers released for this season, utilizes the
+                  A.I.-designed Flash Face and Jailbreak technology from one of
+                  Callaway's best driver, MAVRIK, and added some more
+                </li>
+                <li>
+                  Suitable for golfers with a MID to LOW handicap. Seasoned
+                  players with higher swing speeds and with good consistency.
+                </li>
+                <li>
+                  TRIPLE DIAMOND SPEED is the TOUR prefered driver, used by
+                  Callaway professionals. It offers more of a penetrating and
+                  lower spinning ball flight
+                </li>
               </ul>
             </td>
             <td class="product">
@@ -151,7 +174,8 @@
                 <a
                   href="https://www.pgatoursuperstore.com/epic-speed-driver/2000000017580.html#q=epic+speed&start=1"
                   target="_blank"
-                  >Click Here</a>
+                  >Click Here</a
+                >
               </button>
             </td>
           </tr>
@@ -177,9 +201,23 @@
             </td>
             <td class="skill">
               <ul>
-                <li>One of the most wellknown golf brands in the market. Titleist is known to put out premium quality clubs yearly and this new iteration is no different</li>
-                <li>Suitable for MID to HIGH handicap golfers, or any golfer with a more moderate to slower swing speed. As described by Titleist themselves, the TSi1 produces "ultra-lightweight distance"</li>
-                <li>TSi1 is almost 40g lighter than standard drivers. High launch with mid spin and is the most draw biased Titleist driver to help eliminate the right miss that bothers most right-handed golfers</li>
+                <li>
+                  One of the most wellknown golf brands in the market. Titleist
+                  is known to put out premium quality clubs yearly and this new
+                  iteration is no different
+                </li>
+                <li>
+                  Suitable for MID to HIGH handicap golfers, or any golfer with
+                  a more moderate to slower swing speed. As described by
+                  Titleist themselves, the TSi1 produces "ultra-lightweight
+                  distance"
+                </li>
+                <li>
+                  TSi1 is almost 40g lighter than standard drivers. High launch
+                  with mid spin and is the most draw biased Titleist driver to
+                  help eliminate the right miss that bothers most right-handed
+                  golfers
+                </li>
               </ul>
             </td>
             <td class="product">
@@ -187,12 +225,68 @@
                 <a
                   href="https://www.titleist.com/product/tsi1-driver/652C.html#start=4"
                   target="_blank"
-                  >Click Here</a>
+                  >Click Here</a
+                >
               </button>
             </td>
           </tr>
         </table>
       </div>
     </body>
+    <script>
+      function onsim() {
+        console.log("mouse on...");
+        const x = document.getElementById("simmax");
+        x.src = "images/simmax2.jpg";
+      }
+      function offsim() {
+        console.log("mouse off...");
+        const y = document.getElementById("simmax");
+        y.src = "images/simmaxdriver.jpg";
+      }
+
+      function onepic() {
+        console.log("mouse on...");
+        const x = document.getElementById("epicmax");
+        x.src = "images/epicspeed2.png";
+      }
+      function offepic() {
+        console.log("mouse off...");
+        const y = document.getElementById("epicmax");
+        y.src = "images/Epic-Max-driver.jpg";
+      }
+
+      function ontsi1() {
+        console.log("mouse on...");
+        const x = document.getElementById("tsi1");
+        x.src = "images/tsi1(2).jpg";
+      }
+      function offtsi1() {
+        console.log("mouse off...");
+        const y = document.getElementById("tsi1");
+        y.src = "images/Titleist-TSi1-Driver-1.jpg";
+      }
+
+      document.getElementById("simmax").onmouseover = function () {
+        onsim();
+      };
+      document.getElementById("simmax").onmouseout = function () {
+        offsim();
+      };
+
+      document.getElementById("epicmax").onmouseover = function () {
+        onepic();
+      };
+      document.getElementById("epicmax").onmouseout = function () {
+        offepic();
+      };
+
+      document.getElementById("tsi1").onmouseover = function () {
+        ontsi1();
+      };
+      document.getElementById("tsi1").onmouseout = function () {
+        offtsi1();
+      };
+    </script>
   </head>
 </html>
